@@ -77,7 +77,7 @@ if (!isset($_SESSION['has_login_admin']) && !isset($_SESSION['admin_id'])) {
               </div>
             </li>
             <li>
-              <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+              <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Beranda</a>
             </li>
             <li>
               <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
