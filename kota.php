@@ -1,6 +1,12 @@
 <?php
-require 'admin/config.php';
 
+try {
+  $db = new \PDO("mysql:host=localhost;port=3306;dbname=febri_db", "root", "root");
+  $db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+  $db->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_OBJ);
+} catch(\PDOException $e) {
+  die('Koneksi gagal: ' . $e->getMessage());
+}
 
 $stm = $db->prepare("insert into tb_kota(tipe, nama_kota, nama_prov) values(?,?,?)");
 for ($i=1;$i<=34; $i++) {

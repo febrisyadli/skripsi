@@ -8,13 +8,14 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <title>Hj. Humairoh</title>
-  <link href="{{BASEURL}}/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="{{BASEURL}}/assets/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
-  <link href="{{BASEURL}}/assets/dist/css/sb-admin-2.css" rel="stylesheet">
-  <link href="{{BASEURL}}/assets/vendor/morrisjs/morris.css" rel="stylesheet">
-  <link href="{{BASEURL}}/assets/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
-  <link href="{{BASEURL}}/assets/vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
-  <link href="{{BASEURL}}/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="{{BASEURL}}/assets/vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{BASEURL}}/assets/vendor/metisMenu/metisMenu.min.css">
+  <link rel="stylesheet" href="{{BASEURL}}/assets/dist/css/sb-admin-2.css">
+  <link rel="stylesheet" href="{{BASEURL}}/assets/vendor/morrisjs/morris.css">
+  <link rel="stylesheet" href="{{BASEURL}}/assets/vendor/select2/dist/css/select2.min.css">
+  <link rel="stylesheet" href="{{BASEURL}}/assets/vendor/datatables-plugins/dataTables.bootstrap.css">
+  <link rel="stylesheet" href="{{BASEURL}}/assets/vendor/datatables-responsive/dataTables.responsive.css">
+  <link rel="stylesheet" href="{{BASEURL}}/assets/vendor/font-awesome/css/font-awesome.min.css">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -51,10 +52,12 @@
   <script src="{{BASEURL}}/assets/vendor/datatables/js/jquery.dataTables.min.js"></script>
   <script src="{{BASEURL}}/assets/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
   <script src="{{BASEURL}}/assets/vendor/datatables-responsive/dataTables.responsive.js"></script>
+  <script src="{{BASEURL}}/assets/vendor/select2/dist/js/select2.full.min.js"></script>
   <script src="{{BASEURL}}/assets/dist/js/sb-admin-2.js"></script>
   {# <script src="{{BASEURL}}/assets/data/morris-data.js"></script> #}
   <script>
     $(document).ready(function() {
+      $('.select2').select2()
       $('#myTable').DataTable({
         responsive: true
       });

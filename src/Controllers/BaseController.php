@@ -10,6 +10,7 @@ class BaseController
       'debug' => true,
       'cache' => false
     ]);
+    $twig->addExtension(new \Twig\Extension\DebugExtension());
     $twig->addGlobal('BASEURL', BASEURL);
     echo $twig->render($view.'.twig', $data);
   }

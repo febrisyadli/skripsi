@@ -3,7 +3,7 @@
 {% block content %}
   <div class="row">
     <div class="col-lg-12">
-      <h1 class="page-header">Supplier</h1>
+      <h1 class="page-header">Supplier <a href="{{BASEURL}}/admin/supplier/tambah" class="btn btn-primary pull-right"><i class="fa fa-plus fa-fw"></i> Tambah Data</a></h1>
     </div>
     <!-- /.col-lg-12 -->
   </div>
@@ -12,7 +12,7 @@
     <div class="col-lg-12">
       <div class="panel panel-default">
         <div class="panel-heading">
-          DataTables Advanced Tables
+          List Supplier
         </div>
         <!-- /.panel-heading -->
         <div class="panel-body">
@@ -32,7 +32,7 @@
                 <tr>
                   <td>{{rs.nama_supplier}}</td>
                   <td>{{rs.jenis_usaha}}</td>
-                  <td>{{rs.kota_id}}</td>
+                  <td>{{rs.kota.tipe}} {{rs.kota.nama_kota}}</td>
                   <td>{{rs.alamat}}</td>
                   <td>{{rs.telepon}}</td>
                   <td>{{rs.supplier_id}}</td>
