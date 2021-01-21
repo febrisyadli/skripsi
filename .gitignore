@@ -1,0 +1,4 @@
+o_admin/
+vendor/
+
+.env
