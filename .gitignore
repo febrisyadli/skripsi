@@ -1,4 +1,4 @@
-o_admin/
-vendor/
+/o_admin/
+/vendor/
 
 .env
