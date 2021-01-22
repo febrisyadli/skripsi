@@ -5,6 +5,6 @@ class Toko extends BaseController
 {
   public function index()
   {
-    self::render('toko');
+    self::render('toko/beranda');
   }
 }

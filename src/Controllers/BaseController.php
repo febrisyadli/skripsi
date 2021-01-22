@@ -8,7 +8,7 @@ class BaseController
     $loader = new \Twig\Loader\FilesystemLoader(__DIR__.'/../Views');
     $twig = new \Twig\Environment($loader, [
       'debug' => true,
-      'cache' => false
+      'cache' => __DIR__.'/../../cache'
     ]);
     $twig->addExtension(new \Twig\Extension\DebugExtension());
     $twig->addGlobal('BASEURL', BASEURL);
