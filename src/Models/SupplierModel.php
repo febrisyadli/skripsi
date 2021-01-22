@@ -9,10 +9,7 @@ class SupplierModel extends Model
   // use SoftDeletes;
   protected $table = 'tb_supplier';
   protected $primaryKey = 'supplier_id';
-  protected $fillable = [
-    'nama_supplier','kota_id','alamat','jenis_usaha',
-    'telepon','is_active'
-  ];
+  protected $fillable = ['nama_supplier','kota_id','alamat','jenis_usaha','telepon'];
 
   public function kota() {
     return $this->belongsTo('\App\Models\KotaModel','kota_id');

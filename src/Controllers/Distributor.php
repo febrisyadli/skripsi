@@ -1,10 +1,10 @@
 <?php
 namespace App\Controllers;
 
-use App\Models\SupplierModel;
+use App\Models\UserModel;
 use App\Models\KotaModel;
 
-class Supplier extends BaseController
+class Distributor extends BaseController
 {
 
   public function __construct()
@@ -14,50 +14,50 @@ class Supplier extends BaseController
 
   public function index()
   {
-    $data['rec'] = SupplierModel::all();
-    self::render('admin/supplier/list', $data);
+    $data['rec'] = UserModel::all();
+    self::render('admin/distributor/list', $data);
   }
 
   public function tambah()
   {
     if (getMethod('post')) {
       try {
-        $supplier = SupplierModel::create(filter_input_array(INPUT_POST));
-        if ($supplier->supplier_id) {
+        $distributor = UserModel::create(filter_input_array(INPUT_POST));
+        if ($distributor->distributor_id) {
           notif('success', 'Data berhasil ditambahkan');
-          redirect('/admin/supplier');
+          redirect('/admin/distributor');
         }
       } catch (\Illuminate\Database\QueryException $e) {
         notif('warning', 'Data sudah ada', 'Duplicate Entry');
-        redirect('/admin/supplier/tambah');
+        redirect('/admin/distributor/tambah');
       }
     } else {
       $data['kota'] = KotaModel::all();
-      self::render('admin/supplier/tambah',$data);
+      self::render('admin/distributor/tambah',$data);
     }
   }
 
   public function edit($id)
   {
     if (getMethod('post')) {
-      $sup = SupplierModel::find($id);
-      $sup->nama_supplier = htmlspecialchars($_POST['nama_supplier']);
+      $sup = UserModel::find($id);
+      $sup->nama_distributor = htmlspecialchars($_POST['nama_distributor']);
       $sup->kota_id = htmlspecialchars($_POST['kota_id']);
       $sup->alamat = htmlspecialchars($_POST['alamat']);
       $sup->jenis_usaha = htmlspecialchars($_POST['jenis_usaha']);
       $sup->telepon = htmlspecialchars($_POST['telepon']);
       $sup->save();
-      redirect('/admin/supplier');
+      redirect('/admin/distributor');
     } else {
-      $data['rs'] = SupplierModel::find($id);
+      $data['rs'] = UserModel::find($id);
       $data['kota'] = KotaModel::all();
-      self::render('admin/supplier/edit',$data);
+      self::render('admin/distributor/edit',$data);
     }
   }
 
   public function hapus($id)
   {
-    SupplierModel::destroy($id);
-    redirect('/admin/supplier');
+    UserModel::destroy($id);
+    redirect('/admin/distributor');
   }
 }
